@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Stylish Name Generator</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+padding:20px;
+}
+
+input{
+padding:12px;
+font-size:18px;
+width:80%;
+}
+
+button{
+padding:10px 20px;
+font-size:18px;
+margin-top:10px;
+}
+
+.box{
+background:white;
+margin:8px;
+padding:12px;
+border-radius:10px;
+font-size:22px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Stylish Name Generator</h2>
+
+<input id="name" placeholder="Enter your name">
+<br><br>
+
+<button onclick="generate()">Generate Stylish Name</button>
+
+<div id="result"></div>
+
 <script>
 
 function generate(){
@@ -7,34 +54,14 @@ let result=document.getElementById("result");
 
 result.innerHTML="";
 
-let symbols1=["★","✿","꧁","♛","☬","⚡","♡","♔","♚","✧","✦","✩","✪","✯","✰","✵","✶","✹","✺","❖","✬","✭","✮","✯","✰"];
-let symbols2=["★","✿","꧂","♛","☬","⚡","♡","♔","♚","✧","✦","✩","✪","✯","✰","✵","✶","✹","✺","❖","✬","✭","✮","✯","✰"];
+let symbols=["★","✿","꧁","꧂","♛","☬","⚡","♡","♔","♚","✧","✦","✩","✪","✯"];
 
-let fonts=[
-name,
-name.toUpperCase(),
-name.toLowerCase(),
-"𝒜"+name,
-"𝓕"+name,
-"𝕯"+name,
-"𝔊"+name,
-"𝕊"+name,
-"𝕿"+name,
-"𝓢"+name,
-"𝓖"+name,
-"𝔽"+name,
-"𝕻"+name,
-"𝕷"+name,
-"𝔸"+name
-];
+for(let i=0;i<500;i++){
 
-for(let i=0;i<1000;i++){
+let s1=symbols[Math.floor(Math.random()*symbols.length)];
+let s2=symbols[Math.floor(Math.random()*symbols.length)];
 
-let s1=symbols1[Math.floor(Math.random()*symbols1.length)];
-let s2=symbols2[Math.floor(Math.random()*symbols2.length)];
-let f=fonts[Math.floor(Math.random()*fonts.length)];
-
-let style=s1+" "+f+" "+s2;
+let style=s1+" "+name+" "+s2;
 
 let div=document.createElement("div");
 div.className="box";
@@ -47,3 +74,6 @@ result.appendChild(div);
 }
 
 </script>
+
+</body>
+</html>
